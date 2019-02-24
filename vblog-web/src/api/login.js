@@ -34,7 +34,7 @@ export function logout() {
 
 export function getUserInfo() {
   return request({
-    url: '/user/current',
+    url: '/user/curr_user',
     method: 'get'
   })
 }

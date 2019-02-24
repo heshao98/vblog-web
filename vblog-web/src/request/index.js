@@ -2,6 +2,7 @@ import axios from 'axios'
 import {Message} from 'element-ui'
 import store from '@/store'
 import {getToken} from '@/request/token'
+import {setToken} from '@/request/token'
 
 const service = axios.create({
   baseURL: '/',
@@ -11,7 +12,7 @@ const service = axios.create({
 //request拦截器
 service.interceptors.request.use(config => {
   if (store.state.token) {
-    config.headers['Oauth-Token'] = getToken()
+    config.headers['Authorization'] = getToken()
   }
   return config
 }, error => {
@@ -23,9 +24,9 @@ service.interceptors.response.use(
   response => {
 
     //全局统一处理 Session超时
-    if (response.headers['session_time_out'] == 'timeout') {
-      store.dispatch('fedLogOut')
-      console.log('timeout')
+    if (response.headers['accessToken'] != null) {
+      store.dispatch('SET_ACCESS_TOKEN',response.headers['accessToken'])
+      setToken(response.headers['accessToken'])
     }
 
     const res = response.data;

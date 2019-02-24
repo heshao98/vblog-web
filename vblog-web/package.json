@@ -2,7 +2,7 @@
   "name": "vblog-web",
   "version": "1.0.0",
   "description": "vblog-web",
-  "author": "雪山飞狐",
+  "author": "何少华",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -14,6 +14,7 @@
     "element-ui": "^2.0.10",
     "lodash": "^4.17.4",
     "mavon-editor": "^2.4.16",
+    "pev": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

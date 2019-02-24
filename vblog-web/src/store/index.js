@@ -14,7 +14,10 @@ export default new Vuex.Store({
     token: getToken(),
   },
   mutations: {
-    SET_TOKEN: (state, token) => {
+    SET_ACCESS_TOKEN: (state, token) => {
+      state.token = token;
+    },
+    SET_REFRESH_TOKEN: (state, token) => {
       state.token = token;
     },
     SET_ACCOUNT: (state, account) => {
@@ -35,6 +38,7 @@ export default new Vuex.Store({
     login({commit}, user) {
       return new Promise((resolve, reject) => {
         login(user.account, user.password).then(data => {
+          commit('SET_ACCESS_TOKEN', data.data.account)
           resolve(data);
         }).catch(error => {
           reject(error)
