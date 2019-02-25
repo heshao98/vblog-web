@@ -29,6 +29,8 @@
   import {getHotTags} from '@/api/tag'
   import {listArchives} from '@/api/article'
 
+  import TestCode from './codeTest'
+
   export default {
     name: 'Index',
     data() {
@@ -40,6 +42,7 @@
       }
     },
     components: {
+      'TestCode':TestCode,
       'card-article': CardArticle,
       'card-me': CardMe,
       'card-tag': CardTag,
@@ -88,10 +91,10 @@
       }
     },
     created() {
-      this.getHotArtices()
-      this.getNewArtices()
-      this.getHotTags()
-      this.listArchives()
+      // this.getHotArtices()
+      // this.getNewArtices()
+      // this.getHotTags()
+      // this.listArchives()
     }
   }
 </script>

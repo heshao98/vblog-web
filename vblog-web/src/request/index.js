@@ -11,7 +11,7 @@ const service = axios.create({
 
 //request拦截器
 service.interceptors.request.use(config => {
-  if (store.state.token) {
+  if (store.state.token || getToken()) {
     config.headers['Authorization'] = getToken()
   }
   return config
@@ -24,9 +24,9 @@ service.interceptors.response.use(
   response => {
 
     //全局统一处理 Session超时
-    if (response.headers['accessToken'] != null) {
-      store.dispatch('SET_ACCESS_TOKEN',response.headers['accessToken'])
-      setToken(response.headers['accessToken'])
+    if (response.headers['accesstoken'] != null) {
+      store.commit('SET_ACCESS_TOKEN',response.headers['accesstoken'])
+      setToken(response.headers['accesstoken'])
     }
 
     const res = response.data;

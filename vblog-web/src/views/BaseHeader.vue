@@ -57,6 +57,8 @@
 </template>
 
 <script>
+  import {getToken} from "../request/token";
+
   export default {
     name: 'BaseHeader',
     props: {
@@ -71,7 +73,7 @@
     },
     computed: {
       user() {
-        let login = this.$store.state.account.length != 0
+        let login = getToken()
         let avatar = this.$store.state.avatar
         return {
           login, avatar

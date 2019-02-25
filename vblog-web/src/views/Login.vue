@@ -13,7 +13,12 @@
         </el-form-item>
 
         <el-form-item prop="password">
-          <el-input placeholder="密码" v-model="userForm.password"></el-input>
+          <el-input type="password" placeholder="密码" v-model="userForm.password"></el-input>
+        </el-form-item>
+
+        <el-form-item prop="password">
+          <el-input placeholder="验证码" v-model="userForm.password" style="width: 160px"></el-input>
+          <TestCode></TestCode>
         </el-form-item>
 
         <el-form-item size="small" class="me-login-button">
@@ -34,7 +39,11 @@
 </template>
 
 <script>
+  import  TestCode from './codeTest'
   export default {
+    components:{
+      'TestCode':TestCode
+    },
     name: 'Login',
     data() {
       return {
