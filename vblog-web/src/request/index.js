@@ -30,6 +30,22 @@ service.interceptors.response.use(
     }
 
     const res = response.data;
+    if(!res.success){
+      //401 用户未登录
+      if (res.code === 401) {
+        console.info("用户未登录")
+
+        Message({
+          type: 'warning',
+          showClose: true,
+          message: '未登录或登录超时，请重新登录哦'
+        })
+
+        // store.dispatch('fedLogOut')
+
+        return Promise.reject('error');
+      }
+    }
 
     //0 为成功状态
     if (res.code !== 0) {
