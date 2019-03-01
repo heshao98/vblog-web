@@ -70,10 +70,19 @@
         let that = this
         this.$refs[formName].validate((valid) => {
           if (valid) {
-
-            that.$store.dispatch('register', that.userForm).then(() => {
-              that.$message({message: '注册成功 快写文章吧', type: 'success', showClose: true});
-              that.$router.push({path: '/'})
+            that.$store.dispatch('register', that.userForm).then(data => {
+              if(data.success){
+                that.$store.dispatch('login', that.userForm).then(data => {
+                  if(data.success){
+                    that.$message({message: '注册成功 快写文章吧', type: 'success', showClose: true});
+                    that.$router.push({path: '/'})
+                  } else{
+                    that.$message({message: data.errmsg, type: 'error', showClose: true});
+                  }
+                })
+              } else{
+                that.$message({message: data.errmsg, type: 'error', showClose: true});
+              }
             }).catch((error) => {
               if (error !== 'error') {
                 that.$message({message: error, type: 'error', showClose: true});

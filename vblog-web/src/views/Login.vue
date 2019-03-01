@@ -9,30 +9,34 @@
 
       <el-form ref="userForm" :model="userForm" :rules="rules">
         <el-form-item prop="account">
-          <el-input placeholder="用户名" v-model="userForm.account"></el-input>
+          <el-input placeholder="用户名" v-model="userForm.account" @blur="sliderTestIsShow"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">
-          <el-input type="password" placeholder="密码" v-model="userForm.password"></el-input>
+          <el-input type="password" placeholder="密码" v-model="userForm.password" @blur="sliderTestIsShow"></el-input>
         </el-form-item>
 
-        <el-form-item prop="password">
-          <el-input placeholder="验证码" style="width: 160px"></el-input>
-          <TestCode></TestCode>
+        <!--<el-form-item prop="password">-->
+          <!--<el-input placeholder="验证码" style="width: 160px"></el-input>-->
+          <!--<TestCode></TestCode>-->
+        <!--</el-form-item>-->
+
+        <el-form-item size="small" class="me-login-button">
+          <Formal v-on:updateIsdis="changeIsdis($event)" v-if="sliderIsShow"></Formal>
         </el-form-item>
 
         <el-form-item size="small" class="me-login-button">
-          <el-button type="primary" @click.native.prevent="login('userForm')">登录</el-button>
+          <el-button type="primary" plain v-bind:disabled="isdis" @click.native.prevent="login('userForm')">登录</el-button>
         </el-form-item>
-      </el-form>
 
-      <div class="me-login-design">
-        <p>Designed by
-          <strong>
-            <router-link to="/" class="me-login-design-color">ForFun</router-link>
-          </strong>
-        </p>
-      </div>
+        <div class="me-login-design">
+          <p>Designed by
+            <strong>
+              <router-link to="/" class="me-login-design-color">ForFun</router-link>
+            </strong>
+          </p>
+        </div>
+      </el-form>
 
     </div>
   </div>
@@ -40,13 +44,17 @@
 
 <script>
   import  TestCode from './codeTest'
+  import  Formal from './sliderVerification/index'
   export default {
     components:{
-      'TestCode':TestCode
+      'TestCode':TestCode,
+      'Formal':Formal
     },
     name: 'Login',
     data() {
       return {
+        isdis:true,
+        sliderIsShow:false,
         userForm: {
           account: '',
           password: ''
@@ -64,6 +72,14 @@
       }
     },
     methods: {
+      sliderTestIsShow(){
+        if(this.userForm.account !== '' && this.userForm.password !== ''){
+          this.sliderIsShow = true;
+        }
+      },
+      changeIsdis(isdis){
+        this.isdis = isdis;
+      },
       login(formName) {
         let that = this
 
@@ -74,6 +90,7 @@
                 that.$message({message: data.data, type: 'success', showClose: true});
                 that.$router.go(-1)
               } else{
+                this.sliderIsShow = false;
                 that.$message({message: data.errmsg, type: 'error', showClose: true});
               }
             }).catch((error) => {
@@ -111,7 +128,7 @@
   .me-login-box {
     position: absolute;
     width: 300px;
-    height: 260px;
+    height: 300px;
     background-color: white;
     margin-top: 150px;
     margin-left: -180px;

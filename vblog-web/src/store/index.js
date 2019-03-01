@@ -101,9 +101,7 @@ export default new Vuex.Store({
     register({commit}, user) {
       return new Promise((resolve, reject) => {
         register(user.account, user.nickname, user.password).then((data) => {
-          commit('SET_TOKEN', data.data['Oauth-Token'])
-          setToken(data.data['Oauth-Token'])
-          resolve()
+          resolve(data)
         }).catch((error) => {
           reject(error)
         })

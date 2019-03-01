@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee1565a4-8334-437d-9c59-17f689061482" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vblog-web/src/request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vblog-web/src/request/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vblog-web/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vblog-web/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vblog-web/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vblog-web/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vblog-web/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vblog-web/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vblog-web/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vblog-web/src/views/Register.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,67 +20,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="224">
+              <caret line="94" column="15" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="94" selection-end-column="15" />
               <folding>
-                <element signature="n#style#0;n#el-input#0;n#el-form-item#2;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#1467#1501#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/config/index.js">
+        <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Register.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vblog-web/src/store/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/src/views/identify.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1375">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/src/request/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="64" column="26" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="26" />
+              <caret line="102" column="77" lean-forward="true" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/src/components/card/CardArticle.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/src/main.js">
+        <entry file="file://$PROJECT_DIR$/vblog-web/src/api/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="39" selection-start-line="8" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="150">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vblog-web/src/views/codeTest.vue">
+        <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="200">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#3082#4675#1" expanded="true" />
+                <element signature="e#4737#6486#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,14 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>categor</find>
-      <find>getAllTagsDetail()</find>
-      <find>getHotTags</find>
-      <find>/archives</find>
-      <find>archives</find>
-      <find>listArchives</find>
-      <find>card-article</find>
-      <find>viewArticle</find>
       <find>write</find>
       <find>publishArticle</find>
       <find>getHotArtices</find>
@@ -124,6 +110,14 @@
       <find>localStorage</find>
       <find>contentHeight</find>
       <find>contentWidth</find>
+      <find>beginClientX</find>
+      <find>mouseMoveStata</find>
+      <find>maxwidth</find>
+      <find>confirmWords</find>
+      <find>confirmSuccess</find>
+      <find>slider</find>
+      <find>bind</find>
+      <find>change</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,12 +130,10 @@
         <option value="$PROJECT_DIR$/vblog-web/src/views/blog/BlogAllCategoryTag.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/Home.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/api/article.js" />
-        <option value="$PROJECT_DIR$/vblog-web/config/index.js" />
         <option value="$PROJECT_DIR$/vblog-web/src/api/upload.js" />
         <option value="$PROJECT_DIR$/vblog-web/package.json" />
         <option value="$PROJECT_DIR$/vblog-web/src/api/login.js" />
         <option value="$PROJECT_DIR$/vblog-web/src/router/index.js" />
-        <option value="$PROJECT_DIR$/vblog-web/src/store/index.js" />
         <option value="$PROJECT_DIR$/vblog-web/src/views/BaseHeader.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/request/token.js" />
         <option value="$PROJECT_DIR$/vblog-web/src/utils/verification.js" />
@@ -150,8 +142,14 @@
         <option value="$PROJECT_DIR$/vblog-web/src/views/Index.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/views/codeTest.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/views/identify.vue" />
-        <option value="$PROJECT_DIR$/vblog-web/src/views/Login.vue" />
         <option value="$PROJECT_DIR$/vblog-web/src/request/index.js" />
+        <option value="$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.html" />
+        <option value="$PROJECT_DIR$/vblog-web/src/views/sliderVerification/style.js" />
+        <option value="$PROJECT_DIR$/vblog-web/config/index.js" />
+        <option value="$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.vue" />
+        <option value="$PROJECT_DIR$/vblog-web/src/views/Login.vue" />
+        <option value="$PROJECT_DIR$/vblog-web/src/store/index.js" />
+        <option value="$PROJECT_DIR$/vblog-web/src/views/Register.vue" />
       </list>
     </option>
   </component>
@@ -162,8 +160,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="80" />
+    <option name="x" value="-89" />
+    <option name="y" value="131" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -202,7 +200,22 @@
               <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
               <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vblog-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vblog-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vblog-web" type="b2602c69:ProjectViewProjectNode" />
@@ -231,7 +244,22 @@
               <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
               <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vblog-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vblog-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="vblog-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="sliderVerification" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,6 +279,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\vblog-web\vblog-web\src\views\sliderVerification" />
       <recent name="D:\project\vblog-web\vblog-web\src\utils" />
     </key>
   </component>
@@ -328,6 +357,8 @@
       <workItem from="1551016517318" duration="292000" />
       <workItem from="1551144098997" duration="5854000" />
       <workItem from="1551230651330" duration="1936000" />
+      <workItem from="1551318035156" duration="868000" />
+      <workItem from="1551412869203" duration="13531000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1550930966560</created>
@@ -347,27 +378,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134057000" />
+    <option name="totallyTimeSpent" value="148456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81996727" visible="true" weight="0.25223213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.18003273" side_tool="true" visible="true" weight="0.24925596" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.704918" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3186969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.04918033" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.17540984" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.48032787" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24328147" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7737705" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -404,34 +434,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="登录登出" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/components/markdown/MarkdownEditor.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/blog/BlogView.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="165" column="14" lean-forward="true" selection-start-line="165" selection-start-column="14" selection-end-line="165" selection-end-column="14" />
-          <folding>
-            <element signature="e#3904#3969#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/components/article/ArticleItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/node_modules/webpack/lib/NormalModuleReplacementPlugin.js" />
-    <entry file="file://$PROJECT_DIR$/vblog-web/node_modules/vue-router/types/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/vblog-web/node_modules/vue-router/types/router.d.ts" />
-    <entry file="file://$PROJECT_DIR$/vblog-web/node_modules/element-ui/types/form.d.ts" />
     <entry file="file://$PROJECT_DIR$/vblog-web/node_modules/vuex/dist/vuex.esm.js" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.promise.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,23 +545,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/request/token.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Log.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="238" column="15" selection-start-line="238" selection-start-column="14" selection-end-line="238" selection-end-column="15" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Register.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3448" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/index.vue">
@@ -582,25 +572,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/src/store/mutation-types.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/api/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/load.min.js" />
     <entry file="file://$PROJECT_DIR$/vblog-web/src/utils/verification.js" />
@@ -612,13 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/BaseHeader.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2075">
-          <caret line="83" column="12" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -643,40 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/identify.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="39" selection-start-line="8" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/request/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vblog-web/src/components/card/CardArticle.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -687,19 +619,141 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/identify.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1375">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/request/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/components/card/CardArticle.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="39" selection-start-line="8" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/BaseHeader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2075">
+          <caret line="83" column="12" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/request/token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/.vscode/iisexpress.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/src/views/codeTest.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="225">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/core-scripting.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="201" column="18" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/sliderVerification/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#3082#4675#1" expanded="true" />
+            <element signature="e#4737#6486#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/api/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        <state relative-caret-position="224">
+          <caret line="94" column="15" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="94" selection-end-column="15" />
           <folding>
-            <element signature="n#style#0;n#el-input#0;n#el-form-item#2;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1467#1501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/views/Register.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vblog-web/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="102" column="77" lean-forward="true" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
