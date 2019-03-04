@@ -1,15 +1,23 @@
 import request from '@/request'
 
-export function register(account, nickname, password) {
+export function register(account, nickname, password,verificationCode) {
   const data = {
     account,
     nickname,
-    password
+    password,
+    verificationCode
   }
   return request({
     url: '/register',
     method: 'post',
     data
+  })
+}
+
+export function getVerification(){
+  return request ({
+    url:"/defaultKaptcha",
+    method:"get"
   })
 }
 

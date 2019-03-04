@@ -20,6 +20,14 @@
           <el-input placeholder="密码" v-model="userForm.password"></el-input>
         </el-form-item>
 
+        <el-form-item prop="testCode" class="test">
+          <el-input placeholder="验证码" v-model="userForm.verificationCode"></el-input>
+        </el-form-item>
+
+        <el-form-item class="testCode">
+          <img :src="imgUrl" @click="reloadTestCode">
+        </el-form-item>
+
         <el-form-item size="small" class="me-login-button">
           <el-button type="primary" @click.native.prevent="register('userForm')">注册</el-button>
         </el-form-item>
@@ -38,16 +46,18 @@
 </template>
 
 <script>
-  import {register} from '@/api/login'
+  import {getVerification,register} from '@/api/login'
 
   export default {
     name: 'Register',
     data() {
       return {
+        imgUrl: '/defaultKaptcha/1',
         userForm: {
           account: '',
           nickname: '',
-          password: ''
+          password: '',
+          verificationCode:''
         },
         rules: {
           account: [
@@ -61,11 +71,18 @@
           password: [
             {required: true, message: '请输入密码', trigger: 'blur'},
             {max: 10, message: '不能大于10个字符', trigger: 'blur'}
+          ],
+          verificationCode:[
+            {required: true, message: '请输入验证码', trigger: 'blur'},
+            {max: 4, message: '不能大于10个字符', trigger: 'blur'}
           ]
         }
       }
     },
     methods: {
+      reloadTestCode(){
+        this.imgUrl = "/defaultKaptcha/" + Math.random()
+      },
       register(formName) {
         let that = this
         this.$refs[formName].validate((valid) => {
@@ -95,8 +112,7 @@
         });
 
       }
-
-    }
+    },
   }
 </script>
 
@@ -104,6 +120,17 @@
   #login {
     min-width: 100%;
     min-height: 100%;
+  }
+
+  .test{
+    width: 170px;
+  }
+
+  .testCode{
+    width:100px;
+    margin-left:190px;
+    position:absolute;
+    top: 273px;
   }
 
   .me-video-player {
@@ -121,9 +148,9 @@
   .me-login-box {
     position: absolute;
     width: 300px;
-    height: 320px;
+    height: 380px;
     background-color: white;
-    margin-top: 150px;
+    margin-top: 155px;
     margin-left: -180px;
     left: 50%;
     padding: 30px;
@@ -152,6 +179,7 @@
   }
 
   .me-login-button {
+    margin-top: 40px;
     text-align: center;
   }
 

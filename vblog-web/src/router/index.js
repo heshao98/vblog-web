@@ -86,7 +86,7 @@ router.beforeEach((to, from, next) => {
         store.dispatch('getUserInfo').then(data => { //获取用户信息
           next()
         }).catch(() => {
-          next({path: '/'})
+          //next({path: '/'})
         })
       } else {
         next()

@@ -100,7 +100,7 @@ export default new Vuex.Store({
     // 注册
     register({commit}, user) {
       return new Promise((resolve, reject) => {
-        register(user.account, user.nickname, user.password).then((data) => {
+        register(user.account, user.nickname, user.password,user.verificationCode).then((data) => {
           resolve(data)
         }).catch((error) => {
           reject(error)
