@@ -2,13 +2,13 @@ import request from '@/request'
 
 export function getArticles(query, page) {
   return request({
-    url: '/article/list',
+    url: '/articles/',
     method: 'get',
     params: {
-      pageNo: page.pageNo,
-      pageSize: page.pageSize,
+      current: page.current,
+      size: page.size,
       six: page.name,
-      sort: page.sort,
+      descs: page.descs,
       year: query.year,
       month: query.month,
       tagId: query.tagId,
@@ -19,21 +19,21 @@ export function getArticles(query, page) {
 
 export function getHotArtices() {
   return request({
-    url: '/article/hot',
+    url: '/articles/hot',
     method: 'get'
   })
 }
 
 export function getNewArtices() {
   return request({
-    url: '/article/new',
+    url: '/articles/new',
     method: 'get'
   })
 }
 
 export function viewArticle(id) {
   return request({
-    url: `/article/view/${id}`,
+    url: `/articles/view/${id}`,
     method: 'get'
   })
 }
@@ -55,7 +55,7 @@ export function publishArticle(article) {
 
 export function listArchives() {
   return request({
-    url: '/article/archives',
+    url: '/articles/file',
     method: 'get'
   })
 }

@@ -9,7 +9,7 @@ export function getAllTags() {
 
 export function getHotTags() {
   return request({
-    url: '/tags/hot',
+    url: '/tags/hot_tag',
     method: 'get',
   })
 }

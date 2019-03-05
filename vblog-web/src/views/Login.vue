@@ -163,7 +163,7 @@
   }
 
   .me-login-button button {
-    margin-top: 50px;
+    margin-top: 10px;
     width: 100%;
   }
 

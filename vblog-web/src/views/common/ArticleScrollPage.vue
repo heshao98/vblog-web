@@ -54,10 +54,9 @@
         loading: false,
         noData: false,
         innerPage: {
-          pageSize: 10,
-          pageNo: 1,
-          name: 'create_time',
-          sort: 'desc'
+          size: 10,
+          current: 1,
+          descs: 'create_time'
         },
         articles: []
       }
@@ -78,10 +77,9 @@
         that.loading = true
 
         getArticles(that.query, that.innerPage).then(data => {
-
-          let newArticles = data.data
+          let newArticles = data.data.records
           if (newArticles && newArticles.length > 0) {
-            that.innerPage.pageNo += 1
+            that.innerPage.current += 1
             that.articles = that.articles.concat(newArticles)
           } else {
             that.noData = true

@@ -91,10 +91,10 @@
       }
     },
     created() {
-      // this.getHotArtices()
-      // this.getNewArtices()
-      // this.getHotTags()
-      // this.listArchives()
+      this.getHotArtices()
+      this.getNewArtices()
+      this.getHotTags()
+      this.listArchives()
     }
   }
 </script>
