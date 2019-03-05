@@ -13,7 +13,7 @@
           <h1 class="me-view-title">{{article.title}}</h1>
           <div class="me-view-author">
             <a class="">
-              <img class="me-view-picture" :src="article.author.avatar"></img>
+              <img class="me-view-picture" :src="article.user.avatar"></img>
             </a>
             <div class="me-view-info">
               <span>{{article.author.nickname}}</span>
@@ -135,6 +135,9 @@
             toolbarsFlag: false,
             subfield: false,
             defaultOpen: 'preview'
+          },
+          user:{
+            avatar:''
           }
         },
         comments: [],
