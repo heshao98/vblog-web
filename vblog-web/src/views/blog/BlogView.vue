@@ -91,11 +91,11 @@
             <commment-item
               v-for="(c,index) in comments"
               :comment="c"
-              :articleId="article.id"
               :index="index"
-              :rootCommentCounts="comments.length"
-              @commentCountsIncrement="commentCountsIncrement"
               :key="c.id">
+              <!--:rootCommentCounts="comments.length"-->
+              <!--@commentCountsIncrement="commentCountsIncrement"-->
+
             </commment-item>
           </div>
         </div>
@@ -111,6 +111,8 @@
   import {viewArticle} from '@/api/article'
   import {getCommentsByArticle, publishComment} from '@/api/comment'
 
+  import store from '@/store'
+
   import default_avatar from '@/assets/img/default_avatar.png'
 
   export default {
@@ -123,8 +125,8 @@
         article: {
           id: '',
           title: '',
-          commentNum: 0,
           viewNum: 0,
+          commentNum: 0,
           summary: '',
           createTime: '',
           author: {},
@@ -143,6 +145,7 @@
         comments: [],
         comment: {
           article: {},
+          articleId:'',
           content: ''
         }
       }
@@ -189,9 +192,15 @@
       publishComment() {
         let that = this
         if (!that.comment.content) {
+          that.$message({type: 'error', message: '请输入评论内容～', showClose: true})
           return;
         }
-        that.comment.article.id = that.article.id
+        that.comment.articleId = that.article.id
+
+        if(store.state.account.length === 0){
+          that.$message({type: 'error', message: '登录后才能评论哦～', showClose: true})
+          return;
+        }
 
         publishComment(that.comment).then(data => {
           that.$message({type: 'success', message: '评论成功', showClose: true})
@@ -215,7 +224,7 @@
         })
       },
       commentCountsIncrement() {
-        this.article.commentCounts += 1
+        this.article.commentNum += 1
       }
     },
     //组件内的守卫 调整body的背景色

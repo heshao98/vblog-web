@@ -8,9 +8,17 @@ export function getCommentsByArticle(id) {
   })
 }
 
+export function publishReply(reply){
+  return request({
+    url: '/replys',
+    method: 'post',
+    data: reply
+  })
+}
+
 export function publishComment(comment) {
   return request({
-    url: '/comments/create/change',
+    url: '/comments',
     method: 'post',
     data: comment
   })

@@ -2,13 +2,13 @@
   <div class="me-view-comment-item">
     <div class="me-view-comment-author">
       <a class="">
-        <img class="me-view-picture" :src="comment.author.avatar"></img>
+        <img class="me-view-picture" :src="comment.avatar"/>
       </a>
       <div class="me-view-info">
-        <span class="me-view-nickname">{{comment.author.nickname}}</span>
+        <span class="me-view-nickname">{{comment.nickname}}</span>
         <div class="me-view-meta">
-          <span>{{rootCommentCounts - index}}楼</span>
-          <span>{{comment.createDate | format}}</span>
+          <!--<span>{{rootCommentCounts - index}}楼</span>-->
+          <span>{{comment.createTime | format}}</span>
         </div>
       </div>
     </div>
@@ -21,15 +21,16 @@
       </div>
 
       <div class="me-reply-list">
-        <div class="me-reply-item" v-for="c in comment.childrens" :key="c.id">
+        <div class="me-reply-item" v-for="c in comment.reply" :key="c.id">
           <div style="font-size: 14px">
-            <span class="me-reply-user">{{c.author.nickname}}:&nbsp;&nbsp;</span>
-            <span v-if="c.level == 2" class="me-reply-user">@{{c.toUser.nickname}} </span>
+            <span class="me-reply-user">{{c.nickname}}:</span>
+            <!--<span class="me-reply-user" v-if="c.parentId == '0'">@{{comment.nickname}} </span>-->
+            <span class="me-reply-user" v-if="c.parentId !== '0'">@{{c.parentNickname}} </span>
             <span>{{c.content}}</span>
           </div>
           <div class="me-view-meta">
-            <span style="padding-right: 10px">{{c.createDate | format}}</span>
-            <a class="me-view-comment-tool" @click="showComment(c.id, c.author)">
+            <span style="padding-right: 10px">{{c.createTime | format}}</span>
+            <a class="me-view-comment-tool" @click="showComment(c)">
               <i class="me-icon-comment"></i>&nbsp;回复
             </a>
           </div>
@@ -44,7 +45,7 @@
             class="me-view-comment-text"
             resize="none">
           </el-input>
-          <el-button style="margin-left: 8px" @click="publishComment()" type="text">评论</el-button>
+          <el-button style="margin-left: 8px" @click="publishComment(c)" type="text">评论</el-button>
         </div>
       </div>
 
@@ -53,51 +54,47 @@
 </template>
 
 <script>
-  import {publishComment} from '@/api/comment'
+  import {publishComment,publishReply} from '@/api/comment'
+  import store from '../../store'
 
   export default {
     name: "CommentItem",
     props: {
-      articleId: Number,
+      articleId: String,
       comment: Object,
       index: Number,
-      rootCommentCounts: Number
+      // rootCommentCounts: Number
     },
     data() {
       return {
+        parentId: '',
+        parentNickname: '',
+        parentUserId: '',
         placeholder: '你的评论...',
         commentShow: false,
         commentShowIndex: '',
-        reply: this.getEmptyReply()
+        reply:{}
+        // reply: this.getEmptyReply()
       }
     },
     methods: {
-      showComment(commentShowIndex, toUser) {
-        this.reply = this.getEmptyReply()
-
-        if (this.commentShowIndex !== commentShowIndex) {
-
-          if (toUser) {
-            this.placeholder = `@${toUser.nickname} `
-            this.reply.toUser = toUser
-          } else {
-            this.placeholder = '你的评论...'
-          }
-
-          this.commentShow = true
-          this.commentShowIndex = commentShowIndex
-        } else {
-          this.commentShow = false
-          this.commentShowIndex = ''
-        }
+      showComment(c) {
+        this.reply = this.getEmptyReply(c)
+        this.commentShow = true
+        console.log(this.reply)
       },
-      publishComment() {
+      publishComment(reply) {
         let that = this
         if (!that.reply.content) {
           return;
         }
 
-        publishComment(that.reply).then(data => {
+        if(store.state.account.length === 0){
+          that.$message({type: 'error', message: '登录后才能评论哦～', showClose: true})
+          return;
+        }
+
+        publishReply(that.reply).then(data => {
           that.$message({type: 'success', message: '评论成功', showClose: true})
           if(!that.comment.childrens){
             that.comment.childrens = []
@@ -112,16 +109,13 @@
         })
 
       },
-      getEmptyReply() {
+      getEmptyReply(c) {
         return {
-          article: {
-            id: this.articleId
-          },
-          parent: {
-            id: this.comment.id
-          },
-          toUser: '',
-          content: ''
+          commentId: this.comment.id,
+          parentId: c.id,
+          parentNickname: c.nickname,
+          parentUserId: c.userId,
+          nickname:store.state.account
         }
       }
     }
