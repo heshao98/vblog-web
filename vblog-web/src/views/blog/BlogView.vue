@@ -142,6 +142,7 @@
             avatar:''
           }
         },
+        current:0,
         comments: [],
         comment: {
           article: {},
@@ -181,7 +182,6 @@
         viewArticle(that.$route.params.id).then(data => {
           Object.assign(that.article, data.data)
           that.article.editor.value = data.data.content
-
           that.getCommentsByArticle()
         }).catch(error => {
           if (error !== 'error') {
@@ -215,8 +215,8 @@
       },
       getCommentsByArticle() {
         let that = this
-        getCommentsByArticle(that.article.id).then(data => {
-          that.comments = data.data
+        getCommentsByArticle(that.article.id,that.current).then(data => {
+          that.comments = data.data.list
         }).catch(error => {
           if (error !== 'error') {
             that.$message({type: 'error', message: '评论加载失败', showClose: true})

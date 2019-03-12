@@ -15,7 +15,7 @@
     <div>
       <p class="me-view-comment-content">{{comment.content}}</p>
       <div class="me-view-comment-tools">
-        <a class="me-view-comment-tool" @click="showComment(-1)">
+        <a class="me-view-comment-tool" @click="showComment(comment)">
           <i class="me-icon-comment"></i>&nbsp; 评论
         </a>
       </div>
@@ -30,17 +30,18 @@
           </div>
           <div class="me-view-meta">
             <span style="padding-right: 10px">{{c.createTime | format}}</span>
-            <a class="me-view-comment-tool" @click="showComment(c)">
+            <a class="me-view-comment-tool" @click="showReply(c)">
               <i class="me-icon-comment"></i>&nbsp;回复
             </a>
           </div>
         </div>
 
-        <div class="me-view-comment-write" v-show="commentShow">
+        <div class="me-view-comment-write" v-if="commentShow">
           <el-input
             v-model="reply.content"
             type="input"
             style="width: 90%"
+            @blur="hideComment()"
             :placeholder="placeholder"
             class="me-view-comment-text"
             resize="none">
@@ -67,6 +68,7 @@
     },
     data() {
       return {
+        flag:0,
         parentId: '',
         parentNickname: '',
         parentUserId: '',
@@ -78,10 +80,30 @@
       }
     },
     methods: {
-      showComment(c) {
+      showReply(c) {
+        if(this.commentShow){
+          this.commentShow = false
+        } else{
+          this.commentShow = true
+        }
+        this.flag = 0
         this.reply = this.getEmptyReply(c)
-        this.commentShow = true
-        console.log(this.reply)
+      },
+      showComment(c){
+        this.reply.commentId = c.id
+        this.reply.userId = store.state.id
+        this.reply.nickname= store.state.name
+        this.reply.flag = 1
+        if(this.commentShow){
+          this.commentShow = false
+        } else{
+          this.commentShow = true
+        }
+      },
+      hideComment(){
+        if(!this.reply.content){
+          this.commentShow = false
+        }
       },
       publishComment(reply) {
         let that = this
@@ -95,13 +117,19 @@
         }
 
         publishReply(that.reply).then(data => {
-          that.$message({type: 'success', message: '评论成功', showClose: true})
-          if(!that.comment.childrens){
-            that.comment.childrens = []
+          if(data.success){
+            that.$message({type: 'success', message: '评论成功', showClose: true})
+            if(!that.comment.reply){
+              that.comment.reply = []
+            }
+          console.log(data.data)
+            that.comment.reply.unshift(data.data)
+            that.$emit('commentCountsIncrement')
+            that.commentShow = false
+          } else{
+            that.$message({type: 'error', message: data.errmsg, showClose: true})
           }
-          that.comment.childrens.unshift(data.data)
-          that.$emit('commentCountsIncrement')
-          that.showComment(that.commentShowIndex)
+
         }).catch(error => {
           if (error !== 'error') {
             that.$message({type: 'error', message: '评论失败', showClose: true})
@@ -111,11 +139,12 @@
       },
       getEmptyReply(c) {
         return {
+          flag:0,
           commentId: this.comment.id,
           parentId: c.id,
           parentNickname: c.nickname,
           parentUserId: c.userId,
-          nickname:store.state.account
+          nickname:store.state.name
         }
       }
     }

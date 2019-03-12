@@ -1,18 +1,19 @@
 import request from '@/request'
 
 
-export function getCommentsByArticle(id) {
+export function getCommentsByArticle(id,comment_curr) {
   return request({
-    url: `/comments/article/${id}`,
+    url: `/comments/article/${id}/${comment_curr}`,
     method: 'get'
   })
 }
 
-export function publishReply(reply){
+export function publishReply(reply,flag){
   return request({
     url: '/replys',
     method: 'post',
-    data: reply
+    data: reply,flag
+
   })
 }
 
