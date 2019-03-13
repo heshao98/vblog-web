@@ -203,10 +203,15 @@
         }
 
         publishComment(that.comment).then(data => {
-          that.$message({type: 'success', message: '评论成功', showClose: true})
-          that.comments.unshift(data.data)
-          that.commentCountsIncrement()
-          that.comment.content = ''
+          if(data.success){
+            that.$message({type: 'success', message: '评论成功', showClose: true})
+            that.comments.unshift(data.data)
+            that.commentCountsIncrement()
+            that.comment.content = ''
+          } else{
+            that.$message({type: 'error', message: data.errmsg, showClose: true})
+          }
+
         }).catch(error => {
           if (error !== 'error') {
             that.$message({type: 'error', message: '评论失败', showClose: true})
