@@ -122,7 +122,6 @@
             if(!that.comment.reply){
               that.comment.reply = []
             }
-          console.log(data.data)
             that.comment.reply.unshift(data.data)
             that.$emit('commentCountsIncrement')
             that.commentShow = false

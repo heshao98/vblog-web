@@ -209,7 +209,7 @@
             that.commentCountsIncrement()
             that.comment.content = ''
           } else{
-            that.$message({type: 'error', message: data.errmsg, showClose: true})
+            that.$message({type: 'error', mescommentsage: data.errmsg, showClose: true})
           }
 
         }).catch(error => {
