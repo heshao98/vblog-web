@@ -54,7 +54,7 @@
         loading: false,
         noData: false,
         innerPage: {
-          size: 10,
+          size: 8,
           current: 1,
           descs: 'create_time'
         },

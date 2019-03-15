@@ -3,6 +3,7 @@ import {Message} from 'element-ui'
 import store from '@/store'
 import {getToken} from '@/request/token'
 import {setToken} from '@/request/token'
+import {setRefreshToken} from "./token";
 
 const service = axios.create({
   baseURL: '/',
@@ -26,7 +27,9 @@ service.interceptors.response.use(
     //全局统一处理 Session超时
     if (response.headers['accesstoken'] != null) {
       store.commit('SET_ACCESS_TOKEN',response.headers['accesstoken'])
+      store.commit('SET_REFRESH_TOKEN',response.headers['refreshtoken'])
       setToken(response.headers['accesstoken'])
+      setRefreshToken(response.headers['refreshtoken'])
     }
 
     const res = response.data;

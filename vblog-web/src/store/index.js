@@ -12,13 +12,14 @@ export default new Vuex.Store({
     name: '',
     avatar: '',
     token: '',
+    refreshToken: ''
   },
   mutations: {
     SET_ACCESS_TOKEN: (state, token) => {
       state.token = token;
     },
     SET_REFRESH_TOKEN: (state, token) => {
-      state.token = token;
+      state.refreshToken = token;
     },
     SET_ACCOUNT: (state, account) => {
       state.account = account
@@ -71,11 +72,12 @@ export default new Vuex.Store({
     logout({commit, state}) {
       return new Promise((resolve, reject) => {
         logout().then(data => {
-          commit('SET_TOKEN', '')
+          commit('SET_ACCESS_TOKEN', '')
           commit('SET_ACCOUNT', '')
           commit('SET_NAME', '')
           commit('SET_AVATAR', '')
           commit('SET_ID', '')
+          commit('SET_REFRESH_TOKEN', '')
           removeToken()
           resolve()
         }).catch(error => {
