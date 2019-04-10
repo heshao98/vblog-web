@@ -20,7 +20,7 @@
               <div class="me-view-meta">
                 <span>{{article.createTime | format}}</span>
                 <span>阅读   {{article.viewNum}}</span>
-                <span>评论   {{article.commentNum}}</span>
+                <span>评论   {{comments.length}}</span>
               </div>
             </div>
             <el-button
@@ -85,7 +85,7 @@
             </div>
 
             <div class="me-view-comment-title">
-              <span>{{article.commentNum}} 条评论</span>
+              <span>{{comments.length}} 条评论</span>
             </div>
 
             <commment-item
