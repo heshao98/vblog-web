@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {Message} from 'element-ui'
 import store from '@/store'
-import {getToken} from '@/request/token'
+import {getToken,getRefreshToken} from '@/request/token'
 import {setToken} from '@/request/token'
 import {setRefreshToken} from "./token";
 
@@ -13,7 +13,10 @@ const service = axios.create({
 //request拦截器
 service.interceptors.request.use(config => {
   if (store.state.token || getToken()) {
+    console.log(">>", getToken());
+    console.log(">>", getRefreshToken());
     config.headers['Authorization'] = getToken()
+    config.headers['refreshToken'] = getRefreshToken()
   }
   return config
 }, error => {
@@ -25,7 +28,7 @@ service.interceptors.response.use(
   response => {
 
     //全局统一处理 Session超时
-    if (response.headers['accesstoken'] != null) {
+    if (response.headers['accesstoken']) {
       store.commit('SET_ACCESS_TOKEN',response.headers['accesstoken'])
       store.commit('SET_REFRESH_TOKEN',response.headers['refreshtoken'])
       setToken(response.headers['accesstoken'])
