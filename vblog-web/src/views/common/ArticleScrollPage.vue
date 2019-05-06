@@ -75,7 +75,6 @@
       getArticles() {
         let that = this
         that.loading = true
-
         getArticles(that.query, that.innerPage).then(data => {
           let newArticles = data.data.records
           if (newArticles && newArticles.length > 0) {

@@ -2,11 +2,12 @@
   <div ref="scroll" id="scroll-page" style="overflow: hidden">
     <slot></slot>
     <div
-      style="height: 40px;margin-top: 10px;z-index: 1"
+      style="height: 60px;margin-top: 10px;z-index: 1"
       v-loading="loading"
       element-loading-text="拼命加载中"
       element-loading-spinner="el-icon-loading"
-      element-loading-background="rgba(245,245,245)"></div>
+      element-loading-background="rgba(245,245,245)">
+    </div>
   </div>
 
 </template>
@@ -15,9 +16,9 @@
   export default {
     name: "index",
     props: {
-      loading: Boolean,
-      noData: Boolean,
-      offset: Number
+      loading: false,
+      noData: false,
+      offset: 0
     },
     data() {
       return {
@@ -39,7 +40,6 @@
         if (!that.noData) {
           let curHeight = document.documentElement.scrollTop || document.body.scrollTop
           var scrollPage = document.getElementById('scroll-page');
-
           if ((curHeight + window.innerHeight >= that.$refs.scroll.offsetHeight + that.offset) && that.isDownDirection()) {
             if (!that.loading) {
               that.$emit('load')

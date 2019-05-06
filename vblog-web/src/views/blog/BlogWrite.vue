@@ -2,10 +2,10 @@
   <div id="write" v-title :data-title="title">
     <el-container>
       <base-header :simple=true>
-        <el-col :span="4" :offset="4">
+        <el-col :span="4" :offset=4>
           <div class="me-write-info">写文章</div>
         </el-col>
-        <el-col :span="4" :offset="2">
+        <el-col :span="4" :offset=2>
           <div class="me-write-btn">
             <el-button round @click="publishShow">发布</el-button>
             <el-button round @click="cancel">取消</el-button>

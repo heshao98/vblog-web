@@ -1,5 +1,6 @@
 <template>
   <div class="me-view-body" v-title :data-title="title">
+    <scroll-page :loading="loading" :offset="offset" :no-data="noData" v-on:load="load">
     <el-container class="me-view-container">
       <!--<el-aside class="me-area">-->
         <!--<ul class="me-operation-list">-->
@@ -78,7 +79,7 @@
               </el-row>
 
               <el-row :gutter="20">
-                <el-col :span="3" :offset="21">
+                <el-col :span="3" :offset=21>
                   <el-button type="text"  @click="publishComment()" style="margin-top: 5px;">评论</el-button>
                 </el-col>
               </el-row>
@@ -87,21 +88,20 @@
             <div class="me-view-comment-title">
               <span>{{comments.length}} 条评论</span>
             </div>
-
-            <commment-item
-              v-for="(c,index) in comments"
-              :comment="c"
-              :index="index"
-              :key="c.id">
-              <!--:rootCommentCounts="comments.length"-->
-              <!--@commentCountsIncrement="commentCountsIncrement"-->
-
-            </commment-item>
+              <commment-item
+                v-for="(c,index) in comments"
+                :comment="c"
+                :index="index"
+                :key="c.id">
+                <!--:rootCommentCounts="comments.length"-->
+                <!--@commentCountsIncrement="commentCountsIncrement"-->
+              </commment-item>
           </div>
         </div>
       </el-main>
 
     </el-container>
+    </scroll-page>
   </div>
 </template>
 
@@ -109,6 +109,7 @@
   import MarkdownEditor from '@/components/markdown/MarkdownEditor'
   import CommmentItem from '@/components/comment/CommentItem'
   import {viewArticle} from '@/api/article'
+  import ScrollPage from '@/components/scrollpage'
   import {getCommentsByArticle, publishComment} from '@/api/comment'
 
   import store from '@/store'
@@ -142,18 +143,22 @@
             avatar:''
           }
         },
-        current:0,
+        current:1,
         comments: [],
         comment: {
           article: {},
           articleId:'',
           content: ''
-        }
+        },
+        loading: false,
+        noData: false,
+        offset: 100
       }
     },
     components: {
       'markdown-editor': MarkdownEditor,
-      CommmentItem
+      CommmentItem,
+      'scroll-page': ScrollPage
     },
     computed: {
       avatar() {
@@ -220,8 +225,8 @@
       },
       getCommentsByArticle() {
         let that = this
-        getCommentsByArticle(that.article.id,that.current).then(data => {
-          that.comments = data.data.list
+        getCommentsByArticle(that.article.id,that.current).then(res => {
+          that.comments = res.data.list
         }).catch(error => {
           if (error !== 'error') {
             that.$message({type: 'error', message: '评论加载失败', showClose: true})
@@ -230,6 +235,9 @@
       },
       commentCountsIncrement() {
         this.article.commentNum += 1
+      },
+      load() {
+        this.loading = true
       }
     },
     //组件内的守卫 调整body的背景色

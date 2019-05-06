@@ -34,15 +34,15 @@
   export default {
     name: 'ArticleItem',
     props: {
-      id: Number,
-      weight: Number,
-      title: String,
-      commentNum: Number,
-      viewNum: Number,
-      summary: String,
-      nickname: Object,
-      tags: Array,
-      createTime: String
+      id: '',
+      weight: 0,
+      title: '',
+      commentNum: 0,
+      viewNum: 0,
+      summary: '',
+      nickname: '',
+      tags: [],
+      createTime: ''
     },
     data() {
       return {
