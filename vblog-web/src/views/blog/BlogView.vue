@@ -226,7 +226,8 @@
       getCommentsByArticle() {
         let that = this
         getCommentsByArticle(that.article.id,that.current).then(res => {
-          that.comments = res.data.list
+          that.comments = that.comments.concat(res.data.list)
+          this.loading = false
         }).catch(error => {
           if (error !== 'error') {
             that.$message({type: 'error', message: '评论加载失败', showClose: true})
@@ -238,6 +239,8 @@
       },
       load() {
         this.loading = true
+        this.current++
+        this.getCommentsByArticle()
       }
     },
     //组件内的守卫 调整body的背景色
