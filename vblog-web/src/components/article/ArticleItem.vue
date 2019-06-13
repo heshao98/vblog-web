@@ -19,7 +19,7 @@
 	    	<i class="me-icon-author"></i>&nbsp;{{nickname}}
 	    </span>
 
-      <el-tag v-for="t in tags" :key="t" size="mini" type="success">{{t}}</el-tag>
+      <el-tag v-for="t in tags" :key="t" size="mini" type="success">{{t.tagName}}</el-tag>
 
       <span class="me-pull-right me-article-count">
 	    	<i class="el-icon-time"></i>&nbsp;{{createTime | format}}
