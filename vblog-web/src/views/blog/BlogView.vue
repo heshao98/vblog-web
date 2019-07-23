@@ -21,7 +21,7 @@
               <div class="me-view-meta">
                 <span>{{article.createTime | format}}</span>
                 <span>阅读   {{article.viewNum}}</span>
-                <span>评论   {{comments.length}}</span>
+                <span>评论   {{article.commentNum}}</span>
               </div>
             </div>
             <el-button
@@ -30,7 +30,7 @@
               style="position: absolute;left: 60%;"
               size="mini"
               type="success"
-              round
+              round条评论
               icon="el-icon-edit">编辑</el-button>
           </div>
           <div class="me-view-content">
@@ -86,7 +86,7 @@
             </div>
 
             <div class="me-view-comment-title">
-              <span>{{comments.length}} 条评论</span>
+              <span>{{article.commentNum}} 条评论</span>
             </div>
               <commment-item
                 v-for="(c,index) in comments"

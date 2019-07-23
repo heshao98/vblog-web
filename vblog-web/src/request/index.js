@@ -13,8 +13,6 @@ const service = axios.create({
 //request拦截器
 service.interceptors.request.use(config => {
   if (store.state.token || getToken()) {
-    console.log(">>", getToken());
-    console.log(">>", getRefreshToken());
     config.headers['Authorization'] = getToken()
     config.headers['refreshToken'] = getRefreshToken()
   }
