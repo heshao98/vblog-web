@@ -14,7 +14,7 @@
                   </a>
 
                   <div class="me-allct-meta">
-                    <span>{{c.articles}} 文章</span>
+                    <span>{{c.articleCount}} 文章</span>
                   </div>
                 </div>
               </li>
@@ -143,7 +143,7 @@
     border: 1px solid #f1f1f1;
     transition: border-color .3s;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 3.5rem 0;
   }
 
   .me-allct-info {
