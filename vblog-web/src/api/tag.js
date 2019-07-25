@@ -16,7 +16,7 @@ export function getHotTags() {
 
 export function getAllTagsDetail() {
   return request({
-    url: '/tags/detail',
+    url: '/tags',
     method: 'get',
   })
 }

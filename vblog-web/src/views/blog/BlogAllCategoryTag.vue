@@ -25,12 +25,12 @@
               <li v-for="t in tags" @click="view(t.id)" :key="t.id" class="me-allct-item">
                 <div class="me-allct-content">
                   <a class="me-allct-info">
-                    <img class="me-allct-img" :src="t.avatar?t.avatar:defaultAvatar"/>
+                    <img class="me-allct-img" :src="t.avatar"/>
                     <h4 class="me-allct-name">{{t.tagName}}</h4>
                   </a>
 
                   <div class="me-allct-meta">
-                    <span>{{t.articles}}  文章</span>
+                    <span>{{t.articles}}  {{t.articleCount}}文章</span>
                   </div>
                 </div>
               </li>
