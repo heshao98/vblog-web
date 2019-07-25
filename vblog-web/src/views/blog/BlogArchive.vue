@@ -3,9 +3,9 @@
     <el-container>
       <el-aside class="me-area">
         <ul class="me-month-list">
-          <li v-for="a in archives" :key="a.year + a.month" class="me-month-item">
+          <li v-for="a in archives" :key="a" class="me-month-item">
             <el-badge :value="a.count">
-              <el-button @click="changeArchive(a.year, a.month)" size="small">{{a.year +'年' + a.month + '月'}}
+              <el-button @click="changeArchive(a.year, a.month)" size="small">{{a}}
               </el-button>
             </el-badge>
           </li>
@@ -71,6 +71,7 @@
       },
       listArchives() {
         listArchives().then((data => {
+          console.log(data.data);
           this.archives = data.data
         })).catch(error => {
           that.$message({type: 'error', message: '文章归档加载失败!', showClose: true})
