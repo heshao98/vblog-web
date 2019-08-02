@@ -17,6 +17,11 @@
           <el-menu-item index="/archives">文章归档</el-menu-item>
           <el-menu-item index="/log">日志</el-menu-item>
           <el-menu-item index="/feedback">留言板</el-menu-item>
+          <el-menu-item>
+            <el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
+              <el-button slot="append" icon="el-icon-search"></el-button>
+            </el-input>
+          </el-menu-item>
 
           <el-col :span="2" :offset="1">
             <el-menu-item index="/write"><i class="el-icon-edit"></i>写文章</el-menu-item>
@@ -29,7 +34,7 @@
         <slot></slot>
       </template>
 
-      <el-col :span="4" :offset="0">
+      <el-col :span="4" :offset="0" style="margin-left: 2%">
         <el-menu :router=true menu-trigger="click" mode="horizontal" active-text-color="#5FB878">
 
           <template v-if="!user.login">

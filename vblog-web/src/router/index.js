@@ -41,7 +41,7 @@ const router = new Router({
           component: r => require.ensure([], () => r(require('@/views/Log')), 'log')
         },
         {
-          path: '/archives/:year?/:month?',
+          path: '/archives/:date?',
           component: r => require.ensure([], () => r(require('@/views/blog/BlogArchive')), 'archives')
         },
         {

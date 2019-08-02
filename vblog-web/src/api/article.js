@@ -12,6 +12,7 @@ export function getArticles(query, page) {
       year: query.year,
       month: query.month,
       tagId: query.tagId,
+      date: query.date,
       categoryId: query.categoryId
     }
   })

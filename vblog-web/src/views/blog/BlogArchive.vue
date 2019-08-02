@@ -3,9 +3,9 @@
     <el-container>
       <el-aside class="me-area">
         <ul class="me-month-list">
-          <li v-for="a in archives" :key="a" class="me-month-item">
-            <el-badge :value="a.count">
-              <el-button @click="changeArchive(a.year, a.month)" size="small">{{a}}
+          <li v-for="a in archives" class="me-month-item">
+            <el-badge :value="a.articleCount">
+              <el-button @click="changeArchive(a.date)" size="small">{{a.date}}
               </el-button>
             </el-badge>
           </li>
@@ -33,8 +33,7 @@
       return {
         article: {
           query: {
-            month: this.$route.params.month,
-            year: this.$route.params.year
+            date: ''
           }
         },
         archives: []
@@ -45,9 +44,8 @@
     },
     watch: {
       '$route'() {
-        if (this.$route.params.year && this.$route.params.month) {
-          this.article.query.year = this.$route.params.year
-          this.article.query.month = this.$route.params.month
+        if (this.$route.params.date) {
+          this.article.query.date = this.$route.params.date
         }
       }
     },
@@ -63,16 +61,19 @@
       }
     },
     methods: {
-      changeArchive(year, month) {
+      changeArchive(date) {
         // this.currentArchive = `${year}年${month}月`
         // this.article.query.year = year
         // this.article.query.month = month
-        this.$router.push({path: `/archives/${year}/${month}`})
+        this.$router.push({path: `/archives/${date}`})
       },
       listArchives() {
         listArchives().then((data => {
-          console.log(data.data);
           this.archives = data.data
+          if(this.$route.params.date){
+            this.article.query.date = this.$route.params.date
+            this.changeArchive(this.$route.params.date)
+          }
         })).catch(error => {
           that.$message({type: 'error', message: '文章归档加载失败!', showClose: true})
         })

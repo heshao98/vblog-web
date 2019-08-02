@@ -6,7 +6,7 @@
     </div>
 
     <ul class="me-category-list">
-      <li v-for="a in archives"  class="me-category-item"><a>{{a}}</a>
+      <li v-for="a in archives" :key="a.date"  class="me-category-item" @click="view(a.date)"><a>{{a.date}}</a>
       </li>
     </ul>
   </el-card>
@@ -27,8 +27,9 @@
       }
     },
     methods: {
-      view(year, month) {
-        this.$router.push({path: `/archives/${year}/${month}`})
+      view(date) {
+        console.log(date);
+        this.$router.push({path: `/archives/${date}`})
       }
     }
   }

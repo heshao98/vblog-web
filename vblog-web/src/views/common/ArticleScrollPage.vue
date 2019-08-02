@@ -24,17 +24,18 @@
       },
       query: {
         type: Object,
+        date:'',
         default() {
           return {}
         }
-      }
+      },
     },
     watch: {
       'query': {
         handler() {
           this.noData = false
           this.articles = []
-          this.innerPage.pageNo = 1
+          this.innerPage.current = 1
           this.getArticles()
         },
         deep: true
